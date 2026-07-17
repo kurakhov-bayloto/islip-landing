@@ -437,6 +437,7 @@ src="https://www.facebook.com/tr?id=1541554631090060&ev=PageView&noscript=1"
 <script>
 
 function goToMainSite(){
+  if (typeof fbq === 'function') fbq('track', 'Lead');
   var offerUrl = 'https://bayloto.kg/';
   function go(subid){
     var q = new URLSearchParams();
