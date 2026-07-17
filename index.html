@@ -321,6 +321,10 @@ h1 .accent{ color: var(--gold-strong); -webkit-text-stroke: 0.5px var(--text-pri
 }
 
 </style>
+<!-- Keitaro tracking script -->
+<script type='application/javascript'>
+if (!window.KTracking){window.KTracking={collectNonUniqueClicks: false, multiDomain: false, R_PATH: 'https://click.bayloto.kg/meta-bayloto-isliplimousine-com', P_PATH:'https://click.bayloto.kg/f039c4a/postback', listeners: [], reportConversion: function(){this.queued = arguments;}, getSubId: function(fn) {this.listeners.push(fn);}, ready: function(fn) {this.listeners.push(fn);} };}(function(){var a=document.createElement('script');a.type='application/javascript';a.async=true;a.src='https://click.bayloto.kg/js/k.min.js';var s=document.getElementsByTagName('script')[0];s.parentNode.insertBefore(a,s)})();
+</script><noscript><img height='0' width='0' alt='' src='https://click.bayloto.kg/meta-bayloto-isliplimousine-com'/></noscript>
 </head>
 <body>
 
@@ -415,25 +419,10 @@ h1 .accent{ color: var(--gold-strong); -webkit-text-stroke: 0.5px var(--text-pri
 
 <script>
 
-function injectBaylotoClickLink(){
-  var el = document.getElementById('c8715eb6-b5e9-b416-ced2-5fcb8e41ab6b');
-  if (!el) return;
-  el.innerHTML = '<a href="https://click.bayloto.kg/meta-bayloto-preland1?&se_referrer=' + encodeURIComponent(document.referrer) + '&default_keyword=' + encodeURIComponent(document.title) + '&'+window.location.search.replace('?', '&')+'">Link</a>';
-}
-
 function goToMainSite(){
-  injectBaylotoClickLink();
-  var a = document.querySelector('#c8715eb6-b5e9-b416-ced2-5fcb8e41ab6b a');
-  if (a && a.href) {
-    window.location.href = a.href;
-    return;
-  }
-  var params = new URLSearchParams(window.location.search);
-  var subid = params.get('subid') || params.get('click_id') || params.get('clickid') || '';
-  window.location.href = 'https://bayloto.kg/' + (subid ? ('?click_id=' + encodeURIComponent(subid)) : '');
+  var base = (window.KTracking && window.KTracking.R_PATH) || 'https://click.bayloto.kg/meta-bayloto-isliplimousine-com';
+  window.location.href = base + (window.location.search || '');
 }
-
-injectBaylotoClickLink();
 
 const translations = {
   ru: {
@@ -516,11 +505,6 @@ document.querySelectorAll('[data-lang-btn]').forEach(function(el){
 
 const savedLang = localStorage.getItem('bayloto_lang');
 setLanguage(savedLang === 'ru' ? 'ru' : 'ky');
-</script>
-
-<span id="c8715eb6-b5e9-b416-ced2-5fcb8e41ab6b" style="display:none" aria-hidden="true"></span>
-<script type="application/javascript">
-injectBaylotoClickLink();
 </script>
 
 </body>
