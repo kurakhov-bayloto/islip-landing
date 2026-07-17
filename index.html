@@ -420,8 +420,23 @@ if (!window.KTracking){window.KTracking={collectNonUniqueClicks: false, multiDom
 <script>
 
 function goToMainSite(){
-  var base = (window.KTracking && window.KTracking.R_PATH) || 'https://click.bayloto.kg/meta-bayloto-isliplimousine-com';
-  window.location.href = base + (window.location.search || '');
+  var offerUrl = 'https://bayloto.kg/';
+  function go(subid){
+    var q = new URLSearchParams();
+    if (subid) q.set('click_id', subid);
+    window.location.href = offerUrl + (q.toString() ? ('?' + q.toString()) : '');
+  }
+  var fromUrl = new URLSearchParams(window.location.search).get('_subid')
+    || new URLSearchParams(window.location.search).get('subid');
+  if (fromUrl) {
+    go(fromUrl);
+    return;
+  }
+  if (window.KTracking && typeof window.KTracking.getSubId === 'function') {
+    window.KTracking.getSubId(function(subid){ go(subid || ''); });
+    return;
+  }
+  go('');
 }
 
 const translations = {
