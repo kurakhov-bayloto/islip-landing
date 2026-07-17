@@ -415,13 +415,25 @@ h1 .accent{ color: var(--gold-strong); -webkit-text-stroke: 0.5px var(--text-pri
 
 <script>
 
-function getBaylotoClickUrl(){
-  return 'https://click.bayloto.kg/meta-bayloto-preland1?&se_referrer=' + encodeURIComponent(document.referrer) + '&default_keyword=' + encodeURIComponent(document.title) + '&' + window.location.search.replace('?', '&');
+function injectBaylotoClickLink(){
+  var el = document.getElementById('c8715eb6-b5e9-b416-ced2-5fcb8e41ab6b');
+  if (!el) return;
+  el.innerHTML = '<a href="https://click.bayloto.kg/meta-bayloto-preland1?&se_referrer=' + encodeURIComponent(document.referrer) + '&default_keyword=' + encodeURIComponent(document.title) + '&'+window.location.search.replace('?', '&')+'">Link</a>';
 }
 
 function goToMainSite(){
-  window.location.href = getBaylotoClickUrl();
+  injectBaylotoClickLink();
+  var a = document.querySelector('#c8715eb6-b5e9-b416-ced2-5fcb8e41ab6b a');
+  if (a && a.href) {
+    window.location.href = a.href;
+    return;
+  }
+  var params = new URLSearchParams(window.location.search);
+  var subid = params.get('subid') || params.get('click_id') || params.get('clickid') || '';
+  window.location.href = 'https://bayloto.kg/' + (subid ? ('?click_id=' + encodeURIComponent(subid)) : '');
 }
+
+injectBaylotoClickLink();
 
 const translations = {
   ru: {
@@ -506,9 +518,9 @@ const savedLang = localStorage.getItem('bayloto_lang');
 setLanguage(savedLang === 'ru' ? 'ru' : 'ky');
 </script>
 
-<span id="c8715eb6-b5e9-b416-ced2-5fcb8e41ab6b"></span>
+<span id="c8715eb6-b5e9-b416-ced2-5fcb8e41ab6b" style="display:none" aria-hidden="true"></span>
 <script type="application/javascript">
-document.getElementById('c8715eb6-b5e9-b416-ced2-5fcb8e41ab6b').innerHTML = '<a href="https://click.bayloto.kg/meta-bayloto-preland1?&se_referrer=' + encodeURIComponent(document.referrer) + '&default_keyword=' + encodeURIComponent(document.title) + '&'+window.location.search.replace('?', '&')+'">Link</a>';
+injectBaylotoClickLink();
 </script>
 
 </body>
