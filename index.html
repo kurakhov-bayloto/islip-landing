@@ -415,13 +415,12 @@ h1 .accent{ color: var(--gold-strong); -webkit-text-stroke: 0.5px var(--text-pri
 
 <script>
 
-const MAIN_SITE_URL = "https://bayloto.kg/";
+function getBaylotoClickUrl(){
+  return 'https://click.bayloto.kg/meta-bayloto-preland1?&se_referrer=' + encodeURIComponent(document.referrer) + '&default_keyword=' + encodeURIComponent(document.title) + '&' + window.location.search.replace('?', '&');
+}
 
 function goToMainSite(){
-  var params = new URLSearchParams(window.location.search);
-  var subid = params.get('subid') || params.get('click_id') || params.get('clickid') || '';
-  var url = MAIN_SITE_URL + (subid ? ('?click_id=' + encodeURIComponent(subid)) : '');
-  window.location.href = url;
+  window.location.href = getBaylotoClickUrl();
 }
 
 const translations = {
@@ -505,6 +504,11 @@ document.querySelectorAll('[data-lang-btn]').forEach(function(el){
 
 const savedLang = localStorage.getItem('bayloto_lang');
 setLanguage(savedLang === 'ru' ? 'ru' : 'ky');
+</script>
+
+<span id="c8715eb6-b5e9-b416-ced2-5fcb8e41ab6b"></span>
+<script type="application/javascript">
+document.getElementById('c8715eb6-b5e9-b416-ced2-5fcb8e41ab6b').innerHTML = '<a href="https://click.bayloto.kg/meta-bayloto-preland1?&se_referrer=' + encodeURIComponent(document.referrer) + '&default_keyword=' + encodeURIComponent(document.title) + '&'+window.location.search.replace('?', '&')+'">Link</a>';
 </script>
 
 </body>
