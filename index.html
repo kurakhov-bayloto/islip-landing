@@ -441,7 +441,7 @@ function goToMainSite(){
   var offerUrl = 'https://bayloto.kg/';
   function go(subid){
     var q = new URLSearchParams();
-    if (subid) q.set('click_id', subid);
+    if (subid) q.set('subid', subid);
     window.location.href = offerUrl + (q.toString() ? ('?' + q.toString()) : '');
   }
   var fromUrl = new URLSearchParams(window.location.search).get('_subid')
