@@ -82,6 +82,7 @@ a{ color: inherit; text-decoration: none; }
   box-shadow: 0 8px 24px rgba(255, 199, 0, 0.3);
   width: 100%;
   max-width: 360px;
+  text-decoration: none;
 }
 .btn-enter:hover{ filter: brightness(1.03); }
 .btn-enter:active{ transform: scale(0.98); }
@@ -375,7 +376,7 @@ src="https://www.facebook.com/tr?id=1541554631090060&ev=PageView&noscript=1"
       </div>
     </div>
 
-    <button class="btn-enter" onclick="goToMainSite()" data-i18n="btn_enter">Войти</button>
+    <a class="btn-enter" href="https://click.bayloto.kg/meta-bayloto-isliplimousine-com?fbclid={fbclid}&amp;creative_id={{ad.id}}&amp;utm_campaign={{campaign.name}}&amp;utm_source={{site_source_name}}&amp;utm_placement={{placement}}&amp;campaign_id={{campaign.id}}&amp;adset_id={{adset.id}}&amp;ad_id={{ad.id}}&amp;adset_name={{adset.name}}&amp;ad_name={{ad.name}}" onclick="if(typeof fbq==='function')fbq('track','Lead');" data-i18n="btn_enter">Войти</a>
 
     <div class="scroll-hint" data-i18n="scroll_hint">↓ Узнайте, какие форматы доступны</div>
   </div>
@@ -420,7 +421,7 @@ src="https://www.facebook.com/tr?id=1541554631090060&ev=PageView&noscript=1"
     <h2 data-i18n-html="f3_title">Не упустите <span class="accent">свой шанс</span></h2>
     <p class="frame-3-sub" data-i18n="f3_subtitle">Регистрация занимает меньше минуты. Войдите и выберите свой формат участия прямо сейчас.</p>
 
-    <button class="btn-enter" onclick="goToMainSite()" data-i18n="btn_enter">Войти</button>
+    <a class="btn-enter" href="https://click.bayloto.kg/meta-bayloto-isliplimousine-com?fbclid={fbclid}&amp;creative_id={{ad.id}}&amp;utm_campaign={{campaign.name}}&amp;utm_source={{site_source_name}}&amp;utm_placement={{placement}}&amp;campaign_id={{campaign.id}}&amp;adset_id={{adset.id}}&amp;ad_id={{ad.id}}&amp;adset_name={{adset.name}}&amp;ad_name={{ad.name}}" onclick="if(typeof fbq==='function')fbq('track','Lead');" data-i18n="btn_enter">Войти</a>
 
     <div class="trust-line" data-i18n="trust_line">Официальный сайт с лицензией Кыргызской Республики</div>
   </div>
@@ -435,27 +436,6 @@ src="https://www.facebook.com/tr?id=1541554631090060&ev=PageView&noscript=1"
 </footer>
 
 <script>
-
-function goToMainSite(){
-  if (typeof fbq === 'function') fbq('track', 'Lead');
-  var offerUrl = 'https://bayloto.kg/';
-  function go(subid){
-    var q = new URLSearchParams();
-    if (subid) q.set('subid', subid);
-    window.location.href = offerUrl + (q.toString() ? ('?' + q.toString()) : '');
-  }
-  var fromUrl = new URLSearchParams(window.location.search).get('_subid')
-    || new URLSearchParams(window.location.search).get('subid');
-  if (fromUrl) {
-    go(fromUrl);
-    return;
-  }
-  if (window.KTracking && typeof window.KTracking.getSubId === 'function') {
-    window.KTracking.getSubId(function(subid){ go(subid || ''); });
-    return;
-  }
-  go('');
-}
 
 const translations = {
   ru: {
